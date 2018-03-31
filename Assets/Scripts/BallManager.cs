@@ -45,6 +45,16 @@ public class BallManager : MonoBehaviour {
         }
     }
 
+    void ProgressLevel()
+    {
+        ballsOnScreen = false;
+        foreach(var ball in activeBalls)
+        {
+            Destroy(ball.gameObject);
+        }
+        activeBalls.Clear();
+    }
+
     public BallMovement SpawnBall(BallMovement ballTemplate)
     {
         BallMovement bm = Instantiate(ballTemplate);

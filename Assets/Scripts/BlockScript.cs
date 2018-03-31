@@ -11,6 +11,9 @@ public class BlockScript : MonoBehaviour {
         health -= damage;
         if(health <= 0)
         {
+            BlockManager bm = FindObjectOfType<BlockManager>();
+            if (bm != null)
+                bm.blocks.Remove(this);
             Destroy(gameObject);
         }
     }
