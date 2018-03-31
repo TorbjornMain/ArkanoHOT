@@ -6,6 +6,7 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour {
     public float speed = 5;
     public float velocityKeep = 0.1f;
+    public float damage = 1;
     Rigidbody rb;
 
 
@@ -25,12 +26,12 @@ public class BallMovement : MonoBehaviour {
         switch (collision.gameObject.tag)
         {
             case "Wall":
-                transform.forward = Vector3.Reflect(transform.forward, collision.contacts[0].normal) + ((collision.rigidbody != null) ? Vector3.right * velocityKeep * collision.rigidbody.velocity.x : Vector3.zero);
+                transform.forward = (Vector3.Reflect(transform.forward, collision.contacts[0].normal) + ((collision.rigidbody != null) ? Vector3.right * velocityKeep * collision.rigidbody.velocity.x : Vector3.zero)).normalized;
                 break;
             default:
 
                 break;
         }
-
+        collision.gameObject.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
     }
 }

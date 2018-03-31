@@ -304,7 +304,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BallManager.cs" />
     <Compile Include="Assets\Scripts\BallMovement.cs" />
+    <Compile Include="Assets\Scripts\BlockScript.cs" />
     <Compile Include="Assets\Scripts\PaddleMovement.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
