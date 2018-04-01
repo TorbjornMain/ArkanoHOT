@@ -29,15 +29,17 @@ public class BlockManager : MonoBehaviour {
         int ind = Random.Range(0, levelDatas.Length);
         for (int i = 0; i < levelDatas[ind].spawnPoints.Count; i++)
         {
-            SpawnBlock(levelDatas[ind].spawnPoints[i], blockPrefab.health + (levelHealthScalar * (level-1)));
+            SpawnBlock(levelDatas[ind].spawnPoints[i], levelDatas[ind].spawnColors[i].a * 10 * levelHealthScalar * level, levelDatas[ind].spawnColors[i]);
         }
     }
 
-    void SpawnBlock(Vector3 pos, float health)
+    void SpawnBlock(Vector3 pos, float health, Color col)
     {
         BlockScript b = Instantiate(blockPrefab);
         b.transform.position = pos;
         b.health = health;
+        col.a = 1;
+        b.GetComponent<Renderer>().material.color = col;
         blocks.Add(b);
     }
 }

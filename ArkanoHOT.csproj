@@ -310,7 +310,11 @@
     <Compile Include="Assets\Scripts\BlockScript.cs" />
     <Compile Include="Assets\Scripts\LevelData.cs" />
     <Compile Include="Assets\Scripts\LevelDataEditor.cs" />
+    <Compile Include="Assets\Scripts\LevelDataEditorWindow.cs" />
     <Compile Include="Assets\Scripts\PaddleMovement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Scripts\UnlitTintedTexture.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

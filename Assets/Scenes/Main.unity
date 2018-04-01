@@ -636,6 +636,7 @@ MonoBehaviour:
     type: 2}
   levelDatas:
   - {fileID: 11400000, guid: 4b18e175afea2eb4c8eef81f480c5774, type: 2}
+  - {fileID: 11400000, guid: 8ed5bed1b693c5a4ba56f3a2f7ff73b1, type: 2}
 --- !u!4 &1667204367
 Transform:
   m_ObjectHideFlags: 0
